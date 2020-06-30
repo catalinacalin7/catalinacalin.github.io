@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
 <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-<!-- we import arjs version without NFT but with marker + location based support -->
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
 <body style="margin : 0px; overflow: hidden;">
   <a-scene embedded arjs='sourceType: webcam;'>
-    <!-- handle marker with your own pattern -->
     <a-marker preset="hiro">
       <a-entity position="0 0 0" scale="0.05 0.05 0.05"
         gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf">
       </a-entity>
     </a-marker>
 
-    <!-- handle marker with hiro preset -->
-    <a-marker type="pattern" url="assets/markers/cat-marker.patt">
-      <a-entity position="0 0 0" scale="0.05 0.05 0.05" gltf-model="assets/models/fish/scene.gltf"></a-entity>
-    </a-marker>
-
-    <!-- handle barcode marker -->
     <a-marker type="pattern" url="assets/markers/fish-marker.patt">
-      <a-entity position="0 0 0" scale="0.05 0.05 0.05" gltf-model="assets/models/cat/scene.gltf"></a-entity>
+      <a-entity position="0 0 0" scale="0.05 0.05 0.05"
+      gltf-model="assets/models/fish/scene.gltf">
+    </a-entity>
     </a-marker>
 
-    <!-- add a simple camera -->
+    <a-marker type="pattern" url="assets/markers/cat-marker.patt">
+      <a-entity position="0 0 0" scale="0.05 0.05 0.05"
+      gltf-model="assets/models/cat/scene.gltf">
+      </a-entity>
+    </a-marker>
     <a-entity camera></a-entity>
   </a-scene>
 </body>
+
 </html>
